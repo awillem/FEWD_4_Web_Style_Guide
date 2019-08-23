@@ -1,0 +1,40 @@
+.btn {
+  margin-top: 15px;
+  width: 100%;
+  color: $white;
+  border: none;
+  padding: 10px 0;
+  text-transform: uppercase;
+  border-radius: 5px;
+  @include mq {
+    padding: 10px 30px;
+  }
+}
+
+.btn + .btn {
+  @include mq {
+    margin-left: 10px;
+  }
+}
+
+@include types($color-types);
+
+// .default {
+//   background-color: $color-default;
+// }
+
+// .error {
+//   background-color: $color-error;
+// }
+
+// .info {
+//   background-color: $color-info;
+// }
+
+// .success {
+//   background-color: $color-success;
+// }
+
+// .warning {
+//   background-color: $color-warning;
+// }

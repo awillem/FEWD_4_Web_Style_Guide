@@ -1,0 +1,24 @@
+@mixin mq {
+  @media (min-width: $break) {
+    @content;
+  }
+}
+
+@mixin types($map) {
+  @each $type, $color in $map {
+    .#{$type} {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin flex(
+  $disp: flex,
+  $dir: null
+){
+  display: $disp;
+  flex-direction: $dir;
+}
+
+
+

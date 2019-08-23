@@ -1,0 +1,106 @@
+.container {
+  padding: 0 10px;
+  @include mq {
+    max-width: 1400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.row {
+  @include flex(flex, column);
+  // display: flex;
+  // flex-direction: column;
+  padding: 1em 10px;
+
+  @include mq {
+    flex-direction: row;
+  }
+}
+
+[class^=col] {
+  margin-top: 10px;
+  flex-basis: 100%;
+  min-height: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  @include mq {
+    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+}
+
+[class^=col] + [class^=col]{
+ @include mq {
+   padding-right: 10px;
+   margin-left: 10px;
+ }
+}
+
+@for $i from 1 through 12 {
+  @include mq {
+    .col-#{$i}{
+    flex-basis: 100% / (12/$i);
+    }
+  }
+}
+
+.centered {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.theme.col-1 {
+  background-color: $color-info;
+}
+
+.theme.col-2 {
+  background-color: $color-warning;
+}
+
+.theme.col-3 {
+  background-color: #deb2ee;
+}
+
+.theme.col-4 {
+  background-color: #7ee6fd;
+}
+
+.theme.col-5 {
+  background-color: #88d9a0;
+}
+
+.theme.col-6 {
+  background-color: #4da2bb;
+}
+
+.theme.col-7 {
+  background-color: #ec9fa3;
+}
+
+.theme.col-8 {
+  background-color: #fd9f85;
+}
+
+.theme.col-9 {
+  background-color: $color-error;
+}
+
+.theme.col-10 {
+  background-color: #63cc82;
+}
+
+.theme.col-11 {
+  background-color: $color-default;
+}
+
+.theme.col-12 {
+  background-color: #80e8d1;
+}
+
+.card {
+  flex-basis: 100%;
+}

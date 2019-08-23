@@ -1,0 +1,32 @@
+.nav {
+  padding-left: 0;
+  flex-basis: 100%;
+
+  @include flex(flex, column);
+  // display: flex;
+  // flex-direction: column;
+  @include mq {
+    flex-direction: row;
+    justify-content: flex-end;
+    // align-items: center;
+  }
+}
+
+.nav-link {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  transition: 
+    background-color .2s ease-in-out, 
+    color .2s ease-in-out;
+  @include mq {
+    flex-basis: 100px;
+  }
+}
+
+.nav-link:hover {
+  color: $white;
+  background-color: $color-primary;
+}
