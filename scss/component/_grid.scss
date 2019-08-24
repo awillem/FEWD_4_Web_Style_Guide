@@ -49,8 +49,10 @@
 }
 
 .centered {
-  margin-right: auto;
-  margin-left: auto;
+  @include mq ($breakpoint) {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .theme.col-1 {

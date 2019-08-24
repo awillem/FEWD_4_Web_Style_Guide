@@ -548,9 +548,11 @@ a {
     flex-basis: 100%;
   }
 }
-.centered {
-  margin-right: auto;
-  margin-left: auto;
+@media (min-width: 768px) {
+  .centered {
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 .theme.col-1 {
