@@ -1,6 +1,6 @@
 .container {
   padding: 0 10px;
-  @include mq {
+  @include mq ($breakpoint) {
     max-width: 1400px;
     display: block;
     margin-left: auto;
@@ -14,7 +14,7 @@
   // flex-direction: column;
   padding: 1em 10px;
 
-  @include mq {
+  @include mq ($breakpoint) {
     flex-direction: row;
   }
 }
@@ -25,7 +25,7 @@
   min-height: 25px;
   padding: 10px;
   border-radius: 5px;
-  @include mq {
+  @include mq ($breakpoint) {
     margin-top: 0px;
     justify-content: center;
     align-items: center;
@@ -34,14 +34,14 @@
 }
 
 [class^=col] + [class^=col]{
- @include mq {
+ @include mq ($breakpoint) {
    padding-right: 10px;
    margin-left: 10px;
  }
 }
 
 @for $i from 1 through 12 {
-  @include mq {
+  @include mq ($breakpoint) {
     .col-#{$i}{
     flex-basis: 100% / (12/$i);
     }
@@ -54,11 +54,11 @@
 }
 
 .theme.col-1 {
-  background-color: $color-info;
+  background-color: map-get($color-types, info);
 }
 
 .theme.col-2 {
-  background-color: $color-warning;
+  background-color: map-get($color-types, warning);
 }
 
 .theme.col-3 {
@@ -86,7 +86,7 @@
 }
 
 .theme.col-9 {
-  background-color: $color-error;
+  background-color: map-get($color-types, error);
 }
 
 .theme.col-10 {
@@ -94,7 +94,7 @@
 }
 
 .theme.col-11 {
-  background-color: $color-default;
+  background-color: map-get($color-types, default);
 }
 
 .theme.col-12 {

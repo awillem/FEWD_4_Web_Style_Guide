@@ -1,4 +1,4 @@
-@mixin mq {
+@mixin mq ($break) {
   @media (min-width: $break) {
     @content;
   }
@@ -8,6 +8,10 @@
   @each $type, $color in $map {
     .#{$type} {
       background-color: $color;
+    }
+    .#{$type}:hover {
+      background-color: lighten($color, 15%);
+      color: $color-tint;
     }
   }
 }
